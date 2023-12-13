@@ -160,7 +160,7 @@ const Reviews = ({productId, reviews}: Props) => {
                 <div className="flex items-center mb-4 space-x-4">
                     <img
                         className="w-10 h-10 rounded-full"
-                        src={`${import.meta.env.VITE_BACKEND_URL}${r.avatar}`}
+                        src={`http://127.0.0.1:8000${r.avatar}`}
                         alt=""
                     />
                     <div className="space-y-1 font-medium dark:text-white">

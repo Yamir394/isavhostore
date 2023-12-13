@@ -17,8 +17,8 @@ const ProductCard = ({ product }: Props) => {
                 <Link to={`/product/${product.slug}`}>
                     <img
                         className="rounded-t-lg"
-                        src={`${import.meta.env.VITE_BACKEND_URL}${product.image}`}
-                        alt=""
+                        src={`http://127.0.0.1:8000${product.image}`} 
+                        alt="{`http://127.0.0.1:8000${product.image}`}"
                     />
                 </Link>
                 <div className="p-5 ">

@@ -58,14 +58,21 @@ const AddProductPage = () => {
 
     const handleCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newNumber = parseInt(event.target.value, 10);
-        setCountInStock(newNumber);
-    };
-
+        if (!isNaN(newNumber) && newNumber >= 0) {
+            setCountInStock(newNumber);
+    }//else{ alert("Ingrese un numero valido");
+   // }
+}
     const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newNumber = parseInt(event.target.value, 10);
-        setPrice(newNumber);
-    };
+        if (!isNaN(newNumber) && newNumber >= 0) {
+            setPrice(newNumber);
+    }else{ alert("Ingrese un numero valido");
+        ;
+        
+    }
 
+    };
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files && event.target.files[0];
         if (file) {

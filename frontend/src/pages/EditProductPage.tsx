@@ -82,13 +82,20 @@ const EditProductPage = () => {
 
     const handleCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newNumber = parseInt(event.target.value, 10);
-        setCountInStock(newNumber);
-    };
-
+        if (!isNaN(newNumber) && newNumber >= 0) {
+            setCountInStock(newNumber);
+    }else{ alert("Ingrese un numero valido");
+    }
+}
     const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newNumber = parseInt(event.target.value, 10);
-        setPrice(newNumber);
-    };
+        if (!isNaN(newNumber) && newNumber >= 0) {
+            setPrice(newNumber);
+    }else{ alert("Ingrese un numero valido");
+        ;
+        
+    }
+};
 
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files && event.target.files[0];
@@ -315,7 +322,7 @@ const EditProductPage = () => {
                                                 </button>
                                                 <img
                                                     className="h-48 w-96"
-                                                    src={filePreview || `${import.meta.env.VITE_BACKEND_URL}${data.image}`}
+                                                    src={filePreview || `http://127.0.0.1:8000${data.image}`}
                                                     alt="Imagen seleccionada"
                                                 />
                                             </div>
